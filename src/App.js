@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"; 
 import { Dashboard} from "./pages/Dashboard"; 
 import { SignIn} from "./pages/SignIn"; 
-import { SignUp} from "./pages/SignUp"; 
+import {SignUp} from "./pages/SignUp"; 
 import { ForgotPassword } from './pages/page-links/ForgotPassword';
 import ( ForgotPassword)
 
