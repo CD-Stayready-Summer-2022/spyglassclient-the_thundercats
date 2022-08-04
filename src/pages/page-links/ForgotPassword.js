@@ -50,9 +50,9 @@ export function ForgotPassword() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            <img src='spyglass.png'/>
+          </Typography>
           <Typography component="h1" variant="h5">
             Forgot Password
           </Typography>

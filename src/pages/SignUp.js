@@ -112,6 +112,9 @@ function Copyright(props) {
         alignItems: 'center',
       }}
     >
+        <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            <img src='spyglass.png'/>
+        </Typography>
       <Typography component="h1" variant="h5">
         Sign Up
       </Typography>
