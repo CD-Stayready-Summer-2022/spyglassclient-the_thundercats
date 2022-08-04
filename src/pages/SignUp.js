@@ -53,7 +53,7 @@ function Copyright(props) {
     >
       <Toolbar sx={{ flexWrap: 'wrap' }}>
         <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            <img src='logo-noback.png'/>
+            <img src='spyglass.png'/>
         </Typography>
         {/*<nav>
           <Link
