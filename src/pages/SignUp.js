@@ -39,7 +39,7 @@ import Container from '@mui/material/Container';
     >
       <Toolbar sx={{ flexWrap: 'wrap' }}>
         <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-          Company name
+            <img src='logo-noback.png'/>
         </Typography>
         {/*<nav>
           <Link
