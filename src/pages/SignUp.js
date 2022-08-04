@@ -13,6 +13,19 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
+
+function Copyright(props) {
+    return (
+      <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        {'Copyright © '}
+        <Link color="inherit" href="https://mui.com/">
+          SpyGlass Financial Planner
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
   
   const theme = createTheme();
   
@@ -28,7 +41,8 @@ import Container from '@mui/material/Container';
       });
     };
     
-   return ( <React.Fragment>
+   return ( 
+   <React.Fragment>
     <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
     <CssBaseline />
     <AppBar
@@ -157,6 +171,7 @@ import Container from '@mui/material/Container';
             </Link>
           </Grid>
         </Grid>
+        <Copyright sx={{ mt: 5 }} />
       </Box>
     </Box>
   </Grid>
