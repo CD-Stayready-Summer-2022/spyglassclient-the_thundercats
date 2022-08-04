@@ -18,7 +18,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        SpyGlass Financial Planner
+        SpyGlass Financial Goal Planner
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
