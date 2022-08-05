@@ -5,6 +5,7 @@ import { Dashboard} from "./pages/Dashboard";
 import { SignIn} from "./pages/SignIn"; 
 import {SignUp} from "./pages/SignUp"; 
 import { ForgotPassword } from './pages/page-links/ForgotPassword';
+import { SeeAllGoals } from './pages/SeeAllGoals';
 import ( ForgotPassword)
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/signin" element={<SignIn/>} />
             <Route path="/signup" element={<SignUp/>} />
             <Route path="/forgotpassword" element={<ForgotPassword/>} />
+            <Route path="/allgoals" element={<SeeAllGoals/>} />
         </Routes>
       </BrowserRouter>
     </>

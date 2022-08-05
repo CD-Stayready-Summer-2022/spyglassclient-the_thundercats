@@ -115,11 +115,11 @@ function Copyright(props) {
       <Typography component="h1" variant="h5">
         Sign Up
       </Typography>
-      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 , mx: 2}}>
         <TextField
-          margin="normal"
+          margin-right="normal"
           required
-          fullWidth
+          halfWidth
           id="firstName"
           label="First Name"
           name="firstName"
@@ -127,9 +127,9 @@ function Copyright(props) {
           autoFocus
         />
        <TextField
-          margin="normal"
+          margin-left="normal"
           required
-          fullWidth
+          halfWidth
           id="lastName"
           label="Last Name"
           name="lastName"
