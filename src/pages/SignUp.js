@@ -18,7 +18,7 @@ function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
+        <Link color="inherit">
           SpyGlass Financial Planner
         </Link>{' '}
         {new Date().getFullYear()}
@@ -112,6 +112,9 @@ function Copyright(props) {
         alignItems: 'center',
       }}
     >
+        <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            <img src='spyglass.png'/>
+        </Typography>
       <Typography component="h1" variant="h5">
         Sign Up
       </Typography>

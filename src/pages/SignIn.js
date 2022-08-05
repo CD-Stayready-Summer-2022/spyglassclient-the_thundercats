@@ -17,7 +17,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit">
         SpyGlass Financial Goal Planner
       </Link>{' '}
       {new Date().getFullYear()}
@@ -66,9 +66,9 @@ export function SignIn() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
+            <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+                <img src='spyglass.png'/>
+            </Typography>
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
@@ -107,7 +107,7 @@ export function SignIn() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="/pages/page-links/ForgotPassword" variant="body2">
+                  <Link href="/ForgotPassword" variant="body2">
                     Forgot password?
                   </Link>
                 </Grid>
