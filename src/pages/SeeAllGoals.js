@@ -61,7 +61,7 @@ export function SeeAllGoals() {
           <Link
             variant="button"
             color="text.primary"
-            href="#"
+            href="/"
             sx={{ my: 1, mx: 1.5 }}
           >
             DashBoard
@@ -114,9 +114,17 @@ export function SeeAllGoals() {
                         Goal Balance
                         </Typography>
                         </div>
+                        <div style={{display: 'flex', alignItems: 'center',justifyContent: "space-between"}}>
+                        <Typography>
+                          <b>$</b>
+                        </Typography>
+                        <Typography>
+                        <b>$</b>
+                        </Typography>
+                        </div>
                       </CardContent>
                       <CardActions>
-                        <Button size="small">Edit</Button>
+                        <Button size="small" href="/updategoal" >Edit</Button>
                         <Button size="small">Delete</Button>
                       </CardActions>
                     </Card>
