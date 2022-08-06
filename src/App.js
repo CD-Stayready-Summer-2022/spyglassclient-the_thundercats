@@ -14,9 +14,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Dashboard/>} />
+            <Route path="/dashboard" element={<Dashboard/>} />
             <Route path="/signin" element={<SignIn/>} />
-            <Route path="/signup" element={<SignUp/>} />
+            <Route path="/" element={<SignUp/>} />
             <Route path="/forgotpassword" element={<ForgotPassword/>} />
             <Route path="/allgoals" element={<SeeAllGoals/>} />
             <Route path="/updategoal" element={<UpdateGoal/>} />

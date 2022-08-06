@@ -45,7 +45,7 @@ export function SignUp() {
       password: data.get("password"),
     };
     createUser(user).then((data) => {
-      navigate("/");
+      navigate("/dashboard");
     });
   };
 
@@ -190,6 +190,7 @@ export function SignUp() {
                   autoComplete="current-password"
                 />
                 <Button
+                href="/dashboard"
                   type="submit"
                   fullWidth
                   variant="contained"

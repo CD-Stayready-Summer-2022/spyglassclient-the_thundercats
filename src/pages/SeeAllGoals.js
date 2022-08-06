@@ -61,7 +61,7 @@ export function SeeAllGoals() {
           <Link
             variant="button"
             color="text.primary"
-            href="/"
+            href="/dashboard"
             sx={{ my: 1, mx: 1.5 }}
           >
             DashBoard

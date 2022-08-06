@@ -81,6 +81,7 @@ export function ForgotPassword() {
               label="Remember me"
             />
             <Button
+            href='/signin'
               type="submit"
               fullWidth
               variant="contained"
