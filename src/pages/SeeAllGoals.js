@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -93,6 +94,9 @@ export function SeeAllGoals() {
                     <Card
                       sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                     >
+                      <CardHeader
+                      title="Goal Name"
+                      subheader="Desired End Date: August 6, 2022"/>
                       <CardMedia
                         component="img"
                         sx={{
@@ -103,10 +107,7 @@ export function SeeAllGoals() {
                         alt="random"
                       />
                       <CardContent sx={{ flexGrow: 1 }}>
-                        <Typography gutterBottom variant="h5" component="h2">
-                          Goal Name
-                        </Typography>
-                        <div style={{display: 'flex', alignItems: 'center',justifyContent: "space-between"}}>
+                        <div style={{display: 'flex', alignItems: 'center', justifyContent: "space-between", margin:"5px"}}>
                         <Typography>
                           Target Goal
                         </Typography>
@@ -114,7 +115,7 @@ export function SeeAllGoals() {
                         Goal Balance
                         </Typography>
                         </div>
-                        <div style={{display: 'flex', alignItems: 'center',justifyContent: "space-between"}}>
+                        <div style={{display: 'flex', alignItems: 'center',justifyContent: "space-between", margin:"5px"}}>
                         <Typography>
                           <b>$</b>
                         </Typography>
@@ -122,6 +123,11 @@ export function SeeAllGoals() {
                         <b>$</b>
                         </Typography>
                         </div>
+                        <Typography variant="body2" color="text.secondary">
+                        Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </Typography>
                       </CardContent>
                       <CardActions>
                         <Button size="small" href="/updategoal" >Edit</Button>

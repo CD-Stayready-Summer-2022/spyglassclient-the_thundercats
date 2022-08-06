@@ -117,6 +117,7 @@ export function UpdateGoal() {
                   name="goalName"
                 />
               </Grid>
+          
               <Grid item xs={12} sm={6}>
                 <TextField
                 name="goalTarget"
@@ -135,6 +136,17 @@ export function UpdateGoal() {
                   label="Saved Balance"
                   name="savedBalance"
                 />
+              </Grid>
+              <Grid item xs={12}>
+              <TextField
+          id="outlined-multiline-static"
+          label="Description"
+          multiline
+          required
+          fullWidth
+          rows={4}
+          defaultValue="Description"
+        />
               </Grid>
             </Grid>
             <Button
