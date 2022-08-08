@@ -28,14 +28,12 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Sign In" />
     </ListItemButton>
-
-
     
-    <ListItemButton>
+    <ListItemButton href = "/creategoal">
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Create Goal" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>

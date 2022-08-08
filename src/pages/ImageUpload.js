@@ -144,8 +144,8 @@ class ImageUploadCard extends React.Component {
       <React.Fragment>
         <div className={classes.root}>
           <Card className={this.props.cardName}>
-            {(this.state.mainState == "initial" && this.renderInitialState()) ||
-              (this.state.mainState == "uploaded" &&
+            {(this.state.mainState === "initial" && this.renderInitialState()) ||
+              (this.state.mainState === "uploaded" &&
                 this.renderUploadedState())}
           </Card>
         </div>

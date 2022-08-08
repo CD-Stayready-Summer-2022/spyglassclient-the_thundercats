@@ -20,10 +20,10 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import { mainListItems, secondaryListItems } from './parts/listItems';
+import Chart from './parts/Chart';
+import Deposits from './parts/Deposits';
+import Orders from './parts/Orders';
 import Loadable from './components/Loadable';
 import MinimalLayout from './layout/MinimalLayout';
 
