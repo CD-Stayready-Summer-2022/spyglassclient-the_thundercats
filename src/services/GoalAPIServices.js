@@ -11,14 +11,14 @@ export function createGoal(goal, userId) {
   return axios.post(`${GOAL_BASE_API_URI}/${userId}`, goal, config);
 }
 export function getGoalById(id) {
-  return axios.get(`${GOAL_BASE_API_URI}/${id}`);
+  return axios.get(`${GOAL_BASE_API_URI}/${id}`, config);
 }
-export function getAllGoalsFromUser(id) {
-  return axios.get(`${GOAL_BASE_API_URI}/${id}/goals`, id);
+export function getAllGoalsFromUser(user) {
+  return axios.get(`${GOAL_BASE_API_URI}/user`, user, config);
 }
 export function deleteGoal(id) {
-  return axios.delete(`${GOAL_BASE_API_URI}/${id}`);
+  return axios.delete(`${GOAL_BASE_API_URI}/${id}`, config);
 }
 export function updateGoal(id, goal) {
-  return axios.put(`${GOAL_BASE_API_URI}/${id}`, goal);
+  return axios.put(`${GOAL_BASE_API_URI}/${id}`, goal, config);
 }
