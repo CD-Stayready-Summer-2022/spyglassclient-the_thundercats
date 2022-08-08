@@ -8,6 +8,8 @@ import { SeeAllGoals } from "./pages/SeeAllGoals";
 import { UpdateGoal } from "./pages/UpdateGoal";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import ( ForgotPassword);
+
 
 const firebaseConfig = {
   type: "service_account",
@@ -28,7 +30,7 @@ const app = initializeApp(firebaseConfig);
 
 function App() {
   return (
-    <>
+    <> 
       <BrowserRouter>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
