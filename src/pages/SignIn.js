@@ -39,8 +39,10 @@ export function SignIn() {
         const password = data.get('password');
         signInWithEmailAndPassword(auth, email, password)
             .then((response) => {
-                navigate('/dashboard');
                 sessionStorage.setItem('authToken', response.user.accessToken);
+                sessionStorage.setItem('userId', response.user.uid);
+                // console.log(sessionStorage.getItem('userId'));
+                navigate('/dashboard');
             })
             .catch((error) => {
                 if (error.code === 'auth/wrong-password') {
