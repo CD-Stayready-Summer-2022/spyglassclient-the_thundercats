@@ -26,7 +26,7 @@ function Copyright(props) {
         {...props}
       >
         {"Copyright © "}
-        <Link color="inherit">SpyGlass Financial Planner</Link>{" "}
+        <Link color="inherit">SpyGlass Financial Goal Planner</Link>{" "}
         {new Date().getFullYear()}
         {"."}
       </Typography>
