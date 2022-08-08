@@ -13,6 +13,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { signIn } from '../App.js';
+import { app } from "../firebase-config.js";
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth' 
 
 function Copyright(props) {
     return (
@@ -25,6 +27,7 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
+const auth = getAuth();
 
 export function SignIn() {
     const handleSubmit = (event) => {
@@ -32,6 +35,14 @@ export function SignIn() {
         const data = new FormData(event.currentTarget);
         const email = data.get('email');
         const password = data.get('password');
+        signInWithEmailAndPassword(auth, email, password)
+        .then((response) => {
+            console.log(response);
+            sessionStorage.setItem("authToken", response.user.accessToken);
+    
+        }).catch((error) => {
+            console.log(error);
+        })
     };
 
     return (
@@ -89,7 +100,7 @@ export function SignIn() {
                                 autoComplete="current-password"
                             />
                             <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
-                            <Button href="/dashboard" type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
                                 Sign In
                             </Button>
                             <Grid container>
@@ -99,7 +110,7 @@ export function SignIn() {
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link href="/SignUp" variant="body2">
+                                    <Link href="/" variant="body2">
                                         {"Don't have an account? Sign Up"}
                                     </Link>
                                 </Grid>
