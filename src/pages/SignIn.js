@@ -41,8 +41,10 @@ export function SignIn() {
             .then((response) => {
                 sessionStorage.setItem('authToken', response.user.accessToken);
                 sessionStorage.setItem('userId', response.user.uid);
-                // console.log(sessionStorage.getItem('userId'));
-                navigate('/dashboard');
+                sessionStorage.setItem("email", response.user.email);
+                sessionStorage.setItem("firstName", response.user.firstName);
+                sessionStorage.setItem("lastName", response.user.lastName);
+                navigate('/allgoals');
             })
             .catch((error) => {
                 if (error.code === 'auth/wrong-password') {

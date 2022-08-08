@@ -16,6 +16,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { getAllGoalsFromUser, getGoalById } from '../services/GoalAPIServices';
+import { getUserById } from "../services/UserAPIServices.js";
+import { useEffect } from "react";
 
 function Copyright(props) {
     return (
@@ -30,11 +33,28 @@ function Copyright(props) {
     );
   }
 
-  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 const theme = createTheme();
 
 export function SeeAllGoals() {
+
+  const userId = sessionStorage.getItem('userId'); 
+  const userParam = {
+    "id": userId,
+    "email": sessionStorage.getItem('email'),
+    "firstName": sessionStorage.getItem('firstName'),
+    "lastName": sessionStorage.getItem('lastName')
+  };
+  const json = getAllGoalsFromUser(userParam);
+  console.log(json);
+  const arr = [];
+  Object.keys(json).forEach(function(key) {
+    arr.push(json[key]);
+  });
+  console.log(arr);
+
+  useEffect(() => {
+    console.log(getGoalById(1));
+  });
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -44,6 +64,7 @@ export function SeeAllGoals() {
           savedBalance: data.get('savedBalance'),
           goalImage: data.get('goalImage'),
         });
+  
     };
     return (
         <ThemeProvider theme={theme}>
@@ -89,7 +110,7 @@ export function SeeAllGoals() {
     <h1><center>All Goals</center></h1>
           <main>
               <Grid container spacing={2} sx={{px:5}}>
-                {cards.map((card) => (
+                {arr.forEach((card) => (
                   <Grid item key={card} xs={12} sm={6} md={4}>
                     <Card
                       sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}

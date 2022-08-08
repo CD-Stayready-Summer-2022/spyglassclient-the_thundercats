@@ -47,7 +47,7 @@ export function SignUp() {
     createUser(user).then((data) => {
       console.log(user);
       console.log(1);
-      navigate("/dashboard");
+      navigate("/allgoals");
     });
   };
 

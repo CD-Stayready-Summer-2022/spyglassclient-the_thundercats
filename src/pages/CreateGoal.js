@@ -16,6 +16,7 @@ import GlobalStyles from "@mui/material/GlobalStyles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { createGoal } from '../services/GoalAPIServices';
+import { useNavigate } from 'react-router-dom';
 
 
 function Copyright(props) {
@@ -37,10 +38,12 @@ function Copyright(props) {
 const theme = createTheme();
 
 export function CreateGoal() {
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         const userId = sessionStorage.getItem('userId'); 
+        
         const goal = {
             "nameOfGoal": data.get('goalName'),
             "descriptionOfGoal": "this is the description",
@@ -53,6 +56,7 @@ export function CreateGoal() {
         }
         createGoal(goal, userId).then(data => {
           console.log(data);
+          navigate("/allgoals");
         }); 
         console.log({
             goalName: data.get('goalName'),
