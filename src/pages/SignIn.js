@@ -38,7 +38,7 @@ export function SignIn() {
         signInWithEmailAndPassword(auth, email, password)
         .then((response) => {
             console.log(response);
-            sessionStorage.setItem("authToken", response.user.accessToken);
+            sessionStorage.setItem("authToken", response.user.accessToken)
     
         }).catch((error) => {
             console.log(error);
