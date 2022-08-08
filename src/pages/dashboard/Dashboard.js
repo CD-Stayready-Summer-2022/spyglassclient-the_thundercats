@@ -24,13 +24,16 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+import Loadable from './components/Loadable';
+import MinimalLayout from './layout/MinimalLayout';
+
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+      SpyGlass Financial Goal Planner
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
