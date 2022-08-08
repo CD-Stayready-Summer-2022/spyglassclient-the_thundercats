@@ -40,6 +40,7 @@ export function CreateGoal() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
+        const userId = sessionStorage.getItem('userId'); 
         const goal = {
             "nameOfGoal": data.get('goalName'),
             "descriptionOfGoal": "this is the description",
@@ -50,7 +51,7 @@ export function CreateGoal() {
             "currentDollarAmount": data.get('savedBalance'),
             "contributionFrequency": "WEEKLY"
         }
-        createGoal(goal); 
+        createGoal(goal, userId); 
         console.log({
             goalName: data.get('goalName'),
             targetGoal: data.get('targetGoal'),
