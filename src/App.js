@@ -6,7 +6,6 @@ import { SignUp } from './pages/SignUp';
 import { ForgotPassword } from './pages/page-links/ForgotPassword';
 import { SeeAllGoals } from './pages/SeeAllGoals';
 import { UpdateGoal } from './pages/UpdateGoal';
-import { TestFunctions } from './pages/TestFunctions';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -21,7 +20,6 @@ function App() {
                     <Route path="/forgotpassword" element={<ForgotPassword />} />
                     <Route path="/allgoals" element={<SeeAllGoals />} />
                     <Route path="/updategoal" element={<UpdateGoal />} />
-                    <Route path="/test" element={<TestFunctions />} />
                 </Routes>
             </BrowserRouter>
         </>
