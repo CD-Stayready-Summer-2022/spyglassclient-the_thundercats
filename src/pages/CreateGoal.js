@@ -44,14 +44,16 @@ export function CreateGoal() {
         const goal = {
             "nameOfGoal": data.get('goalName'),
             "descriptionOfGoal": "this is the description",
-            "iconPicture": data.get('goalImage'),
+            "iconPicture": "picture",
             "endDate": "2022-08-04",
             "startingDollarAmount": 0.00,
-            "targetDollarAmount": data.get('targetGoal'),
+            "targetDollarAmount": 100.00,
             "currentDollarAmount": data.get('savedBalance'),
             "contributionFrequency": "WEEKLY"
         }
-        createGoal(goal, userId); 
+        createGoal(goal, userId).then(data => {
+          console.log(data);
+        }); 
         console.log({
             goalName: data.get('goalName'),
             targetGoal: data.get('targetGoal'),
@@ -80,7 +82,6 @@ export function CreateGoal() {
          <Link
             variant="button"
             color="text.primary"
-            href="/dashboard"
             sx={{ my: 1, mx: 1.5 }}
           >
             DashBoard
@@ -164,7 +165,6 @@ export function CreateGoal() {
             </Grid>
             <Button
                   type="submit"
-                  href = "/allgoals"
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
