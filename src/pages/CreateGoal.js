@@ -82,9 +82,10 @@ export function CreateGoal() {
          <Link
             variant="button"
             color="text.primary"
+            href="/allgoals"
             sx={{ my: 1, mx: 1.5 }}
           >
-            DashBoard
+            See All Goals
           </Link>
           {/*<Link
             variant="button"
