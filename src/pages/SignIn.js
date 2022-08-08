@@ -13,8 +13,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { signIn } from '../App.js';
-import { app } from "../firebase-config.js";
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth' 
+import { app } from '../firebase-config.js';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 function Copyright(props) {
     return (
@@ -30,19 +31,27 @@ const theme = createTheme();
 const auth = getAuth();
 
 export function SignIn() {
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         const email = data.get('email');
         const password = data.get('password');
         signInWithEmailAndPassword(auth, email, password)
-        .then((response) => {
-            console.log(response);
-            sessionStorage.setItem("authToken", response.user.accessToken)
-    
-        }).catch((error) => {
-            console.log(error);
-        })
+            .then((response) => {
+                sessionStorage.setItem('authToken', response.user.accessToken);
+                sessionStorage.setItem('userId', response.user.uid);
+                // console.log(sessionStorage.getItem('userId'));
+                navigate('/dashboard');
+            })
+            .catch((error) => {
+                if (error.code === 'auth/wrong-password') {
+                    alert('Please check the Password');
+                }
+                if (error.code === 'auth/user-not-found') {
+                    alert('Please check the Email');
+                }
+            });
     };
 
     return (
