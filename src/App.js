@@ -22,7 +22,6 @@ function App() {
                     <Route path="/forgotpassword" element={<ForgotPassword />} />
                     <Route path="/allgoals" element={<SeeAllGoals />} />
                     <Route path="/updategoal" element={<UpdateGoal />} />
-                    <Route path="/test" element={<TestFunctions />} />
                 </Routes>
             </BrowserRouter>
         </>
