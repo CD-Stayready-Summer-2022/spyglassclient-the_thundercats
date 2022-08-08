@@ -8,7 +8,6 @@ import { SeeAllGoals } from './pages/SeeAllGoals';
 import { UpdateGoal } from './pages/UpdateGoal';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import(ForgotPassword);
 
 function App() {
     return (
