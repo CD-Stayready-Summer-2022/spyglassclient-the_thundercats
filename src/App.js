@@ -45,21 +45,5 @@ function App() {
       </BrowserRouter>
     </>
   );
-}
 
 export default App;
-
-// xxxxxxxxxx Check email or password exsist in firebase authentication xxxxxxxxxx
-export function signIn(email, password) {
-  var userEmail = email.value;
-  var userPassword = password.value;
-  var userEmailFormat =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  var userPasswordFormat = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
-  var checkUserEmailValid = userEmail.match(userEmailFormat);
-  var checkUserPasswordValid = userPassword.match(userPasswordFormat);
-  const auth = getAuth(firebaseConfig);
-  signInWithEmailAndPassword(auth, userEmail, userPassword).then((success) => {
-    console.log("success").then((value) => {});
-  });
-}
