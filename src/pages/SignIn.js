@@ -45,8 +45,12 @@ export function SignIn() {
                 console.log(response);
 
                 sessionStorage.setItem("email", response.user.email);
+
                 sessionStorage.setItem("firstName", response.user.firstName);
                 sessionStorage.setItem("lastName", response.user.lastName);
+
+
+                sessionStorage.setItem("displayName", response.user.displayName);
 
                 navigate('/allgoals');
             })

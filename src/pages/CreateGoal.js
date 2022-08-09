@@ -88,6 +88,7 @@ export function CreateGoal() {
             color="text.primary"
             href="/allgoals"
             sx={{ my: 1, mx: 1.5 }}
+            href="/allgoals"
           >
             See All Goals
           </Link>
