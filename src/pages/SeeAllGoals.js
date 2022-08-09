@@ -16,6 +16,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { getAllGoalsFromUser, getGoalById } from '../services/GoalAPIServices';
+import { getUserById } from "../services/UserAPIServices.js";
+import { useEffect } from "react";
 
 function Copyright(props) {
     return (
@@ -30,11 +33,21 @@ function Copyright(props) {
     );
   }
 
-  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 const theme = createTheme();
 
 export function SeeAllGoals() {
+
+  const userId = sessionStorage.getItem('userId'); 
+  const userEmail = sessionStorage.getItem('email');
+  let nameArr = sessionStorage.getItem('displayName').split(' ');
+  const userParam = {
+    "id": userId,
+    "email": userEmail,
+    "firstName": nameArr[0],
+    "lastName": nameArr[1]
+  };
+
+  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -44,6 +57,7 @@ export function SeeAllGoals() {
           savedBalance: data.get('savedBalance'),
           goalImage: data.get('goalImage'),
         });
+  
     };
     return (
         <ThemeProvider theme={theme}>
@@ -96,7 +110,7 @@ export function SeeAllGoals() {
                     >
                       <CardHeader
                       title="Goal Name"
-                      subheader="Desired End Date: August 6, 2022"/>
+                      subheader="Desired End Date: August 31, 2022"/>
                       <CardMedia
                         component="img"
                         sx={{
@@ -117,16 +131,14 @@ export function SeeAllGoals() {
                         </div>
                         <div style={{display: 'flex', alignItems: 'center',justifyContent: "space-between", margin:"5px"}}>
                         <Typography>
-                          <b>$</b>
+                          <b>$100.00</b>
                         </Typography>
                         <Typography>
-                        <b>$</b>
+                        <b>$25.00</b>
                         </Typography>
                         </div>
                         <Typography variant="body2" color="text.secondary">
-                        Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        We are working to release this feature soon, check back later for updates!
         </Typography>
                       </CardContent>
                       <CardActions>
@@ -141,7 +153,7 @@ export function SeeAllGoals() {
           {/* Footer */}
           <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
             <Typography variant="h6" align="center" gutterBottom>
-              Footer
+              You've got this, {nameArr[0]}!
             </Typography>
             <Typography
               variant="subtitle1"
@@ -149,7 +161,7 @@ export function SeeAllGoals() {
               color="text.secondary"
               component="p"
             >
-              Something here to give the footer a purpose!
+              A little progress each day adds up to big results!
             </Typography>
             <Copyright />
           </Box>
