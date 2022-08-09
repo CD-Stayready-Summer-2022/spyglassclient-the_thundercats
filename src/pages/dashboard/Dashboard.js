@@ -124,7 +124,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              SpyGlass Financial Planner
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">

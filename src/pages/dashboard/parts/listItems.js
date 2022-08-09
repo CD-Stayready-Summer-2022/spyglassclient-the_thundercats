@@ -35,17 +35,18 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Create Goal" />
     </ListItemButton>
-    <ListItemButton>
+
+    <ListItemButton href = "/updategoal">
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Update Goal" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href = "/allgoals">
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="All Goals" />
     </ListItemButton>
   </React.Fragment>
 );
