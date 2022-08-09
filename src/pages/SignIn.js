@@ -42,8 +42,7 @@ export function SignIn() {
                 sessionStorage.setItem('authToken', response.user.accessToken);
                 sessionStorage.setItem('userId', response.user.uid);
                 sessionStorage.setItem("email", response.user.email);
-                sessionStorage.setItem("firstName", response.user.firstName);
-                sessionStorage.setItem("lastName", response.user.lastName);
+                sessionStorage.setItem("displayName", response.user.displayName);
                 navigate('/allgoals');
             })
             .catch((error) => {
